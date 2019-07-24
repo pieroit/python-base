@@ -23,6 +23,9 @@ df['Parenti'] = \
 
 res = df.groupby('Pclass').mean()
 
+pivot = df.pivot_table(index=['Sex', 'Survived'], columns=['Pclass'], values='Age')
+print(pivot)
+
 plot = sns.barplot(data=df, x='Pclass', y='Fare', hue='Sex')
 plt.show()
 

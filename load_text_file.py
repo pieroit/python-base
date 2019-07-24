@@ -24,3 +24,12 @@ with open(file_name, 'r') as f:
     for line in f:
         content.append(line)
 print(content)
+
+# read and write at the same time
+content = []
+last_position = 0
+with open(file_name, 'r+') as f:
+    for line in f:
+        content.append(line)
+        f.write(line.upper())
+print(content)
